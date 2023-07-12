@@ -1,0 +1,2 @@
+# osma
+WIP Programming Language.
