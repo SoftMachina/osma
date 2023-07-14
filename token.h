@@ -1,30 +1,29 @@
-#include <string>
-enum TOKENTYPE{
-    SEMICOLON,
-    PLUS,
-    VAR,
-    CONST,
-    EQUAL,
-    IDENTIFIER,
-    NUMBER,
+enum TOKENTYPE {
+  SEMICOLON,
+  PLUS,
+  VAR,
+  CONST,
+  EQUAL,
+  IDENTIFIER,
+  NUMBER,
 };
 
 class Token {
-    private:
-        TOKENTYPE t;
-        std::string lex;
-    public:
-        Token(TOKENTYPE tt, std::string llex){
-            t = tt;
-            lex = llex;
-        }
-        
-        Token(){}
-        
-        TOKENTYPE get_token_type() {return this->t;}
-        std::string get_lex() {return this->lex;}
+private:
+  TOKENTYPE t;
+  char *plex;
 
-        void set_token_type(TOKENTYPE tt) {this->t = tt;}
-        void set_lex(std::string llex) {this->lex = llex;}
+public:
+  Token(TOKENTYPE tt, char *pplex) {
+    t = tt;
+    plex = pplex;
+  }
 
+  Token() {}
+
+  TOKENTYPE get_token_type() { return this->t; }
+  char* get_plex() { return this->plex; }
+
+  void set_token_type(TOKENTYPE tt) { this->t = tt; }
+  void set_plex(char *pplex) { this->plex = pplex; }
 };
